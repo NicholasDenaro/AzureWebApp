@@ -6,20 +6,17 @@
 		var body=document.getElementsByTagName("body")[0];
 		var request=new XMLHttpRequest();
 		request.onreadystatechange=function(){
-			//alert("function get");
 			if(request.readyState==4)
 			{
-				//alert("state=4");
 				if(request.status==200)
 				{
-					alert("success!");
-					alert(request.responseText);
 					var dirs=request.responseText.split('|');
 					for(var i=0;i<dirs.length;i++)
 					{
+						if(dirs[i]=="")continue;
 						var element=document.createElement("a");
 						element.setAttribute("href", dirs[i]);
-						element.innerHTML="/"+dirs[i].replace("./","");
+						element.innerHTML=dirs[i].replace("./","")+"/";
 						body.appendChild(element);
 						body.appendChild(document.createElement("br"));
 						body.appendChild(document.createElement("br"));
@@ -27,8 +24,6 @@
 				}
 				else
 				{
-					alert("failed: "+request.status);
-					alert(request.responseText);
 					var element=document.creatElement("p");
 					element.innerHTML="failed to connect to PHP";
 					body.appendChild(element);
@@ -40,16 +35,14 @@
 				element.innerHTML="failed to connect to PHP";
 				body.appendChild(element);
 			}
-			//alert("finished");
 		}
-		//alert("before open");
 		request.open("GET","folder.php",true);
-		//alert("after open");
 		request.send(null);
-		alert("after send");
 	}
 </script>
 <body onload="init()">
+<h1>Subfolders:<h1>
+<br>
 </body>
 
 </html>

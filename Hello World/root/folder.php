@@ -14,7 +14,7 @@ foreach($results as $result)
 	if(is_dir($path.$result))
 	{
 		//some sort of return for it is a path;
-		$ret=$ret."|".$path.$result;
+		$ret=$ret.$path.$result."|";
 	}
 }
 
