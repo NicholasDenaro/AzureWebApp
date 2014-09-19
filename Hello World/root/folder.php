@@ -6,7 +6,7 @@ $ret="";
 
 foreach($results as $result)
 {
-	if($result==='.' or result==='..')continue;
+	if($result==='./' or result==='../')continue;
 	
 	if(is_dir($path.$result)
 	{
@@ -15,6 +15,7 @@ foreach($results as $result)
 	}
 }
 
+echo "\n|\n"
 echo $ret;
 
 ?>
