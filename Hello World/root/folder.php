@@ -18,7 +18,7 @@ foreach($results as $result)
 	}
 }
 
-echo "\n||\n"
+echo "\n||\n";
 echo $ret;
 
 ?>
