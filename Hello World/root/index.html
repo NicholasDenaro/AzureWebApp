@@ -6,12 +6,13 @@
 		var body=document.getElementsByTagName("body")[0];
 		var request=new XMLHttpRequest();
 		request.onreadystatechange=function(){
-			alert("function get");
+			//alert("function get");
 			if(request.readyState==4)
 			{
-				alert("state=4");
+				//alert("state=4");
 				if(request.status==200)
 				{
+					alert("success!");
 					var dirs=request.responseText.split('|');
 					for(var i=0;i<dirs.length;i++)
 					{
@@ -36,11 +37,11 @@
 				element.innerHTML="failed to connect to PHP";
 				body.appendChild(element);
 			}
-			alert("finished");
+			//alert("finished");
 		}
-		alert("before open");
+		//alert("before open");
 		request.open("GET","folder.php",true);
-		alert("after open");
+		//alert("after open");
 		request.send(null);
 		alert("after send");
 	}
