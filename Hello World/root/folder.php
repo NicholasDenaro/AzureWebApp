@@ -6,8 +6,7 @@ $ret="";
 
 foreach($results as $result)
 {
-	if($result=="./." || $result=="./..")
-	
+	if($result=="." || $result=="..")
 	{
 		continue;
 	}
