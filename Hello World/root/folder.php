@@ -6,9 +6,12 @@ $ret="";
 
 foreach($results as $result)
 {
-	if($result==='./' or result==='../')continue;
+	if($result==='./' or result==='../')
+	{
+		continue;
+	}
 	
-	if(is_dir($path.$result)
+	if(is_dir($path.$result))
 	{
 		//some sort of return for it is a path;
 		$ret=$ret."|".$path.$result;
