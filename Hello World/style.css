@@ -1,13 +1,27 @@
 html {
-	width: 100% height :   100%;
+	width: 100%;
+	height: 100%;
 }
 
 body {
 	width: 100%;
 	height: 100%;
 	background-color: #000000;
+	display: block;
+	float: left;
+	position: relative;
+	border-width: 3px;
+	border-style: dotted;
+	border-color: #FFFFFF;
+	box-sizing: border-box;
 }
 
 #hello {
 	color: #00FFFF;
+}
+
+#c1 {
+}
+
+.buttons {
 }

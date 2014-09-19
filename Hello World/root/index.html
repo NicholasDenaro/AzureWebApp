@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<script>
+	function init()
+	{
+		var body=document.getElementsByTagName("body")[0];
+		var request=new XMLHttpRequest();
+		request.onreadystatechange=function(){
+			alert("function get");
+			if(request.readyState==4)
+			{
+				alert("state=4");
+				if(request.status==200)
+				{
+					alert("status=200");
+					var dirs=request.responseText.split('|');
+					for(var i=0;i<dirs.length;i++)
+					{
+						var element=document.createElement("a");
+						element.setAttribute("href", dirs[i]);
+						element.innerHTML=dirs[i];
+						body.appendChild(element);
+					}
+				}
+				else
+				{
+					alert("failed: "+request.status);
+					alert(request.responseText);
+					var element=document.creatElement("p");
+					element.innerHTML="failed to connect to PHP";
+					body.appendChild(element);
+				}
+			}
+			else
+			{
+				var element=document.creatElement("p");
+				element.innerHTML="failed to connect to PHP";
+				body.appendChild(element);
+			}
+			alert("finished");
+		}
+		alert("before open");
+		request.open("GET","folder.php",true);
+		alert("after open");
+		request.send(null);
+		alert("after send");
+	}
+</script>
+<body onload="init()">
+</body>
+
+</html>

@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Hello World Test</title>
-<link rel="stylesheet" href="style.css">
-<script type="text/javascript" src="code.js"></script>
-</head>
-
-<body onload="init()">
-
-	<p id="hello">Click the button...</p>
-	<button id="b1" onclick="changeText(this);">Click Here!</button>
-	<button id="b2" onclick="location.reload();">Reload page</button>
-</body>
+	<head>
+	<title>Hello World Test</title>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="code.js"></script>
+	</head>
+	
+	<body onload="init()">
+		<p id="hello">Click the button...</p>
+		<canvas id="c1" onclick="draw(this,event);" width="240" height="160">Canvas not supported.</canvas>
+		<div>
+			<button id="b1" class="buttons" onclick="changeText(this);">Click Here!</button>
+			<button id="b2" class="buttons" onclick="location.reload();">Reload page</button>
+		</div>
+	</body>
 </html>
