@@ -1,3 +1,4 @@
+<?php
 $path="./";
 $results=scandir($path);
 
@@ -15,3 +16,5 @@ foreach($results as $result)
 }
 
 echo $ret;
+
+?>
