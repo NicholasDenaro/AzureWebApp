@@ -2,6 +2,10 @@
  * 
  */
 
+var mouseDown=false;
+var lastX=null;
+var lastY=null;
+
 function init()
 {
 	document.getElementById("b1").disabled=false;
@@ -22,14 +26,6 @@ function mousePos(element,event)
 {
 	var x=0;
 	var y=0;
-	/*while(element)
-	{
-		x+=(element.offsetLeft-element.scrollLeft+element.clientLeft);
-		y+=(element.offsetTop-element.scrollTop+element.clientTop);
-		element=element.offsetParent;
-	}
-	x=event.clientX-x;
-	y=event.clientY-y;*/
 	
 	var rect=element.getBoundingClientRect(), root=document.documentElement;
 	x=event.pageX-rect.left-root.scrollLeft;
@@ -41,12 +37,32 @@ function mousePos(element,event)
 
 function draw(canvas,event)
 {
-	//clearCanvas(canvas);
+	if(!mouseDown)
+		return;
 	var ctx=canvas.getContext("2d");
 	ctx.fillStyle="#000000";
 	var pos=mousePos(canvas,event);
-	ctx.fillRect(parseInt(pos.x),parseInt(pos.y),2,2);
-	ctx.stroke();
+	//ctx.fillRect(parseInt(pos.x),parseInt(pos.y),2,2);
+	if(lastX!==null)
+	{
+		ctx.beginPath();
+		ctx.moveTo(lastX,lastY);
+		ctx.lineTo(pos.x,pos.y);
+		ctx.stroke();
+	}
+	lastX=pos.x;
+	lastY=pos.y
+}
+
+function onMouseDown()
+{
+	mouseDown=true;
+}
+
+function onMouseUp()
+{
+	mouseDown=false;
+	lastX=null;
 }
 
 function clearCanvas(canvas)
