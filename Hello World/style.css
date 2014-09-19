@@ -8,7 +8,6 @@ body {
 	height: 100%;
 	background-color: #000000;
 	display: block;
-	float: left;
 	position: relative;
 	border-width: 3px;
 	border-style: dotted;
