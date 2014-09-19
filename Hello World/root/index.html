@@ -13,6 +13,7 @@
 				if(request.status==200)
 				{
 					alert("success!");
+					alert(request.responseText);
 					var dirs=request.responseText.split('|');
 					for(var i=0;i<dirs.length;i++)
 					{
