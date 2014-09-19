@@ -18,7 +18,7 @@
 					for(var i=0;i<dirs.length;i++)
 					{
 						var element=document.createElement("a");
-						element.setAttribute("href", dirs[i]);
+						element.setAttribute("href", dirs[i].replace("./",""));
 						element.innerHTML=dirs[i];
 						body.appendChild(element);
 						body.appendChild(document.createElement("br"));
