@@ -7,11 +7,13 @@
 	</head>
 	
 	<body onload="init()">
-		<p id="hello">Click the button...</p>
-		<canvas id="c1" onmousemove="draw(this,event);" onmousedown="onMouseDown()" onmouseup="onMouseUp()" width="240" height="160">Canvas not supported.</canvas>
-		<div>
-			<button id="b1" class="buttons" onclick="changeText(this);">Click Here!</button>
-			<button id="b2" class="buttons" onclick="location.reload();">Reload page</button>
+		<div id="mainDiv">
+			<p id="hello">Click the button...</p>
+			<canvas id="c1" onmousemove="draw(this,event);" onmousedown="onMouseDown()" onmouseup="onMouseUp()" width="240" height="160">Canvas not supported.</canvas>
+			<div>
+				<button id="b1" class="buttons" onclick="changeText(this);">Click Here!</button>
+				<button id="b2" class="buttons" onclick="location.reload();">Reload page</button>
+			</div>
 		</div>
 	</body>
 </html>
