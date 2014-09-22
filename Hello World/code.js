@@ -51,17 +51,29 @@ function draw(canvas,event)
 		ctx.stroke();
 	}
 	lastX=pos.x;
-	lastY=pos.y
+	lastY=pos.y;
 }
 
-function onMouseDown()
+function onMouseDown(element,event)
 {
 	mouseDown=true;
+	var ctx=element.getContext("2d");
+	ctx.fillStyle="#000000";
+	var pos=mousePos(element,event);
+	ctx.fillRect(pos.x-0.625,pos.y-0.625,1.5,1.25);
+	ctx.stroke();
+	lastX=pos.x;
+	lastY=pos.y;
 }
 
-function onMouseUp()
+function onMouseUp(element,event)
 {
 	mouseDown=false;
+	lastX=null;
+}
+
+function onMouseOut(element,event)
+{
 	lastX=null;
 }
 
