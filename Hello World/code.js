@@ -12,6 +12,17 @@ function init()
 	clearCanvas(document.getElementById("c1"));
 }
 
+function save()
+{
+	var canvas=document.getElementById("c1");
+	
+	var d=canvas.toDataURL("image/png");
+	//var w=window.open("about:blank","image from canvas");
+	//w.document.write("<img src='"+d+"' alt='from canvas' />");
+	var link=document.getElementById("link1");
+	link.href=d;
+	link.click();
+}
 
 function changeText(element)
 {

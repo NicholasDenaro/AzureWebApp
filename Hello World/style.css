@@ -25,5 +25,9 @@ body {
 	padding: 10px;
 }
 
+#link1 {
+	display: none;
+}
+
 .buttons {
 }
